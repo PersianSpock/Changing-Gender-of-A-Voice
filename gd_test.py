@@ -163,29 +163,20 @@ if __name__ == "__main__":
     # load the saved model (after training)
     # model = pickle.load(open("result/mlp_classifier.model", "rb"))
     from utils import load_data, split_data, create_model
-    import argparse
-    parser = argparse.ArgumentParser(description="""Gender recognition script, this will load the model you trained, 
-                                    and perform inference on a sample you provide (either using your voice or a file)""")
-    parser.add_argument("-f", "--file", help="The path to the file, preferred to be in WAV format")
-    args = parser.parse_args()
-    file = args.file
     # construct the model
     model = create_model()
     # load the saved/trained weights
-    model.load_weights("model.h5")
-    if not file or not os.path.isfile(file):
-        # if file not provided, or it doesn't exist, use your voice
-        print("Please talk")
-        # put the file name here
-        file = "test.wav"
-        # record the file (start talking)
-        record_to_file(file)
-    # extract features and reshape it
-    features = extract_feature(file, mel=True).reshape(1, -1)
-    # predict the gender!
-    male_prob = model.predict(features)[0][0]
-    female_prob = 1 - male_prob
-    gender = "male" if male_prob > female_prob else "female"
-    # show the result!
-    print("Result:", gender)
-    print(f"Probabilities:     Male: {male_prob*100:.2f}%    Female: {female_prob*100:.2f}%")
+    model.load_weights("results/model.h5")
+    
+    directory = "samples"
+    for filename in os.listdir(directory):
+      path = os.path.join(directory, filename)
+      # extract features and reshape it
+      features = extract_feature(path, mel=True).reshape(1, -1)
+      # predict the gender!
+      male_prob = model.predict(features)[0][0]
+      female_prob = 1 - male_prob
+      gender = "male" if male_prob > female_prob else "female"
+      # show the result!
+      print("Result:", gender)
+      print(f"Probabilities:     Male: {male_prob*100:.2f}%    Female: {female_prob*100:.2f}%")
