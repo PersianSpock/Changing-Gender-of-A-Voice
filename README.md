@@ -20,9 +20,9 @@ This will take sometime to extract features from the audio files and generate ne
 
 **Training For Gender Detection:**
 
-You can customize your model in utils.py file under the create_model() function and then run:
+You can customize your model in [`utils.py`](utils.py) file under the `create_model()` function and then run:
 
-python gd_train.py
+    python gd_train.py
 
 **Testing For Gender Detection:**
 
