@@ -14,7 +14,7 @@ Filtered out invalid samples.
 Filtered only the samples that are labeled in genre field.
 Balanced the dataset so that number of female samples are equal to male.
 Used Mel Spectrogram feature extraction technique to get a vector of a fixed length from each voice sample, the data folder contain only the features and not the actual mp3 samples (the dataset is too large, about 13GB).
-You have to download the dataset and extract the features files (.npy files) on your own, preparation.py is the responsible script for that, once you unzip it, put preparation.py in the root directory of the dataset and run it.
+You have to download the dataset and extract the features files (.npy files) on your own, preparation.py is the responsible script for that, once you unzip it, put `preparation.py` in the root directory of the dataset and run it.
 
 This will take sometime to extract features from the audio files and generate new .csv files.
 
