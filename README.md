@@ -6,7 +6,7 @@ The project consists of 4 parts:
 3. S2T using wav2vec
 4. T2S using pyttsx3
 
-Dataset used:
+**Dataset used:**
 
 Mozilla's Common Voice large dataset is used here, and some preprocessing has been performed:
 
@@ -18,13 +18,13 @@ If you wish to download the dataset and extract the features files (.npy files) 
 
 This will take sometime to extract features from the audio files and generate new .csv files.
 
-Training For Gender Detection:
+**Training For Gender Detection:**
 
 You can customize your model in utils.py file under the create_model() function and then run:
 
 python gd_train.py
 
-Testing:
+**Testing For Gender Detection:**
 
 gd_test.py is the code responsible for testing your audio files or your voice:
 
