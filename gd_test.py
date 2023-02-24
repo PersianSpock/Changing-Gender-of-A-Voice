@@ -168,7 +168,7 @@ if __name__ == "__main__":
     # load the saved/trained weights
     model.load_weights("results/model.h5")
     
-    directory = "samples"
+    directory = "samples."
     for filename in os.listdir(directory):
       path = os.path.join(directory, filename)
       # extract features and reshape it
