@@ -26,15 +26,10 @@ python gd_train.py
 
 **Testing For Gender Detection:**
 
-gd_test.py is the code responsible for testing your audio files or your voice:
-
-python test.py --help
-Output:
-
-usage: gd_test.py [-h] [-f FILE]
+gd_test.py is the code responsible for testing your audio files:
 
 Gender recognition script, this will load the model you trained, and perform
-inference on a sample you provide (either using your voice or a file)
+inference on a sample you provide (using your file)
 
 optional arguments:
 -h, --help            show this help message and exit
