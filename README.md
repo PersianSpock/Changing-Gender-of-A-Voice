@@ -26,24 +26,33 @@ python gd_train.py
 
 **Testing For Gender Detection:**
 
-gd_test.py is the code responsible for testing your audio files:
+[`test.py`](gd_test.py) is the code responsible for testing your audio files or your voice:
 
-Gender recognition script, this will load the model you trained, and perform
-inference on a sample you provide (using your file)
+    python gd_test.py --help
 
-optional arguments:
--h, --help            show this help message and exit
--f FILE, --file FILE  The path to the file, preferred to be in WAV format
-For instance, to get gender of the file test-samples/27-124992-0002.wav, you can:
+**Output:**
 
-python gd_test.py --file "test-samples/27-124992-0002.wav"
-Output:
+    usage: gd_test.py [-h] [-f FILE]
 
-Result: male
-Probabilities:     Male: 96.36%    Female: 3.64%
-There are some audio samples in test-samples folder for you to test with, it is grabbed from LibriSpeech dataset.
+    Gender recognition script, this will load the model you trained, and perform
+    inference on a sample you provide (either using your voice or a file)
 
-To make inference on your voice instead, you need to:
+    optional arguments:
+    -h, --help            show this help message and exit
+    -f FILE, --file FILE  The path to the file, preferred to be in WAV format
 
-python gd_test.py
-Wait until you see "Please speak" prompt and start talking, it will stop recording as long as you stop talking.
+- For instance, to get gender of the file `test-samples/27-124992-0002.wav`, you can:
+
+      python gd_test.py --file "test-samples/27-124992-0002.wav"
+
+    **Output:**
+
+      Result: male
+      Probabilities:     Male: 96.36%    Female: 3.64%
+  
+  There are some audio samples in [test-samples](test-samples) folder for you to test with, it is grabbed from [LibriSpeech dataset](http://www.openslr.org/12).
+- To make inference on your voice instead, you need to:
+      
+      python gd_test.py
+
+    Wait until you see `"Please speak"` prompt and start talking, it will stop recording as long as you stop talking.
