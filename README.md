@@ -41,7 +41,7 @@ You can customize your model in [`utils.py`](utils.py) file under the `create_mo
     -h, --help            show this help message and exit
     -f FILE, --file FILE  The path to the file, preferred to be in WAV format
 
-- For instance, to get gender of the file `test-samples/27-124992-0002.wav`, you can:
+- For instance, to get gender of the file `samples./27-124992-0002.wav`, you can:
 
       python gd_test.py --file "test-samples/27-124992-0002.wav"
 
