@@ -1,5 +1,5 @@
 # Changing-Gender-of-A-Voice
-Fun Project
+Fun Project.
 The project consists of 4 parts:
 1. Dataset prepration 
 2. Gender Detection
